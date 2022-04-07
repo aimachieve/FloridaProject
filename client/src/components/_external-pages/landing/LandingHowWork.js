@@ -26,7 +26,7 @@ const ContentStyle = styled('div')(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
-export default function LandingDarkMode() {
+export default function LandingHowWork() {
   return (
     <RootStyle>
       <Container maxWidth="lg" sx={{ position: 'relative' }}>
@@ -42,7 +42,7 @@ export default function LandingDarkMode() {
               <MotionInView variants={varFadeInUp}>
                 <Stack direction="row" alignItems="center" spacing={3} sx={{ mb: 2 }}>
                   <Stack direction="row" justifyContent="center" sx={{ width: 102 }}>
-                    <Box component="img" sx src="/images/search.png" />
+                    <Box component="img" src="/images/search.png" />
                   </Stack>
                   <Typography sx={{ fontSize: 18, lineHeight: '26px', fontWeight: 700 }}>
                     Find the tool your looking for
@@ -52,7 +52,7 @@ export default function LandingDarkMode() {
               <MotionInView variants={varFadeInUp}>
                 <Stack direction="row" alignItems="center" spacing={3} sx={{ mb: 2 }}>
                   <Stack direction="row" justifyContent="center" sx={{ width: 102 }}>
-                    <Box component="img" sx src="/images/phone.png" />
+                    <Box component="img" src="/images/phone.png" />
                   </Stack>
                   <Typography sx={{ fontSize: 18, lineHeight: '26px', fontWeight: 700 }}>Book your landscaping idea</Typography>
                 </Stack>
@@ -60,7 +60,7 @@ export default function LandingDarkMode() {
               <MotionInView variants={varFadeInUp}>
                 <Stack direction="row" alignItems="center" spacing={3}>
                   <Stack direction="row" justifyContent="center" sx={{ width: 102 }}>
-                    <Box component="img" sx src="/images/shake.png" />
+                    <Box component="img" src="/images/shake.png" />
                   </Stack>
                   <Typography sx={{ fontSize: 18, lineHeight: '26px', fontWeight: 700 }}>Pick up our self!</Typography>
                 </Stack>

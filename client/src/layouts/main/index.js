@@ -7,7 +7,6 @@ import Logo from '../../components/Logo';
 //
 import MainNavbar from './MainNavbar';
 import MainFooter from './MainFooter';
-import Alert from '../main/Alert'
 
 // ----------------------------------------------------------------------
 
@@ -19,7 +18,6 @@ export default function MainLayout() {
     <>
       <MainNavbar />
       <div>
-        <Alert />
         <Outlet />
       </div>
       <MainFooter />

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addEducation } from '../../actions/profile';
+import { Box, Grid, Container, Typography, Stack, TextField, Button } from '@material-ui/core';
 
 const AddEducation = ({ addEducation, history }) => {
   const [formData, setFormData] = useState({
@@ -29,54 +30,46 @@ const AddEducation = ({ addEducation, history }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
   return (
-    <Fragment>
-      <h1 className="large text-primary">Add Your Education</h1>
-      <p className="lead">
-        <i className="fas fa-code-branch" /> Add any school or bootcamp that you
-        have attended
-      </p>
-      <small>* = required field</small>
-      <form
-        className="form"
-        onSubmit={e => {
-          e.preventDefault();
-          addEducation(formData, history);
-        }}
-      >
-        <div className="form-group">
-          <input
+    <Container maxWidth="md" sx={{ mt: 20 }}>
+      <Fragment>
+        <h1 className="large text-primary">Add Your Education</h1>
+        <p className="lead">
+          <i className="fas fa-code-branch" /> Add any school or bootcamp that you
+          have attended
+        </p>
+        <small>* = required field</small>
+        <form
+          onSubmit={e => {
+            e.preventDefault();
+            addEducation(formData, history);
+          }}
+        >
+          <Stack spacing={3}>
+          <TextField
             type="text"
-            placeholder="* School or Bootcamp"
+            label="* School or Bootcamp"
             name="school"
             value={school}
             onChange={onChange}
             required
           />
-        </div>
-        <div className="form-group">
-          <input
+          <TextField
             type="text"
-            placeholder="* Degree or Certificate"
+            label="* Degree or Certificate"
             name="degree"
             value={degree}
             onChange={onChange}
             required
           />
-        </div>
-        <div className="form-group">
-          <input
+          <TextField
             type="text"
-            placeholder="Field of Study"
+            label="Field of Study"
             name="fieldofstudy"
             value={fieldofstudy}
             onChange={onChange}
           />
-        </div>
-        <div className="form-group">
           <h4>From Date</h4>
-          <input type="date" name="from" value={from} onChange={onChange} />
-        </div>
-        <div className="form-group">
+          <TextField type="date" name="from" value={from} onChange={onChange} />
           <p>
             <input
               type="checkbox"
@@ -87,33 +80,31 @@ const AddEducation = ({ addEducation, history }) => {
             />{' '}
             Current School
           </p>
-        </div>
-        <div className="form-group">
           <h4>To Date</h4>
-          <input
+          <TextField
             type="date"
             name="to"
             value={to}
             onChange={onChange}
             disabled={current}
           />
-        </div>
-        <div className="form-group">
-          <textarea
+          <TextField
+            multiline
             name="description"
             cols="30"
-            rows="5"
-            placeholder="Program Description"
+            rows={5}
+            label="Program Description"
             value={description}
             onChange={onChange}
           />
-        </div>
-        <input type="submit" className="btn btn-primary my-1" />
-        <Link className="btn btn-light my-1" to="/dashboard">
-          Go Back
-        </Link>
-      </form>
-    </Fragment>
+          </Stack>
+          <input type="submit" className="btn btn-primary my-1" />
+          <Link className="btn btn-light my-1" to="/dashboard">
+            Go Back
+          </Link>
+        </form>
+      </Fragment>
+    </Container>
   );
 };
 

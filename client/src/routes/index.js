@@ -53,12 +53,15 @@ export default function Router() {
         { path: '/register', element: <Register /> },
         { path: '/login', element: <Login /> },
         { path: '/profiles', element: <Profiles /> },
-        { path: '/profile/:id', element: <Profile /> }
+        { path: '/profile/:id', element: <Profile /> },
+        { path: '/dashboard', element: <Dashboard /> },
+        { path: '/create-profile', element: <ProfileForm /> },
+        { path: '/edit-profile', element: <ProfileForm /> },
+        { path: '/add-experience', element: <AddExperience /> },
+        { path: '/add-education', element: <AddEducation /> },
+        { path: '/posts', element: <Posts /> },
+        { path: '/posts/:id', element: <Post /> }
       ],
-      // children: [{ path: '/register', element: <Register /> }],
-      // children: [{ path: '/login', element: <Login /> }],
-      // children: [{ path: '/profiles', element: <Profiles /> }],
-      // children: [{ path: '/profile/:id', element: <Profile /> }],
     },
     { path: '*', element: <Navigate to="/404" replace /> }
   ]);
@@ -75,3 +78,9 @@ const Register = Loadable(lazy(() => import('../pages/auth/Register')));
 const Login = Loadable(lazy(() => import('../pages/auth/Login')));
 const Profiles = Loadable(lazy(() => import('../pages/profiles/Profiles')));
 const Profile = Loadable(lazy(() => import('../pages/profile/Profile')));
+const Dashboard = Loadable(lazy(() => import('../pages/dashboard/Dashboard')));
+const ProfileForm = Loadable(lazy(() => import('../pages/profile-forms/ProfileForm')));
+const AddExperience = Loadable(lazy(() => import('../pages/profile-forms/AddExperience')));
+const AddEducation = Loadable(lazy(() => import('../pages/profile-forms/AddEducation')));
+const Posts = Loadable(lazy(() => import('../pages/posts/Posts')));
+const Post = Loadable(lazy(() => import('../pages/post/Post')));

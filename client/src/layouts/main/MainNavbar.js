@@ -17,6 +17,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from '../../actions/auth';
+import Alert from './Alert'
 
 // ----------------------------------------------------------------------
 
@@ -72,7 +73,7 @@ const MainNavbar = ({ auth: { isAuthenticated, user }, logout }) => {
 
   const guestLinks = (
     <Stack spacing={2} direction="row" alignItems="center">
-      <Link style={{fontSize: '20px', fontWeight: 'bold'}} to="/profiless">Users</Link>
+      <Link style={{fontSize: '20px', fontWeight: 'bold'}} to="/profiles">Users</Link>
       <Button component={RouterLink} variant="outlined" to="/register">
         Register
       </Button>
@@ -84,6 +85,7 @@ const MainNavbar = ({ auth: { isAuthenticated, user }, logout }) => {
 
   return (
     <AppBar sx={{ boxShadow: 0, bgcolor: 'transparent', marginBottom: 50 }}>
+      <Alert />
       <ToolbarStyle
         disableGutters
         sx={{

@@ -138,6 +138,7 @@ img {
   margin-right: 0.5rem;
   transition: opacity 0.2s ease-in;
   outline: none;
+  border-radius: 10px;
 }
 
 .badge {
@@ -151,10 +152,18 @@ img {
 
 .alert {
   padding: 0.8rem;
-  margin: 1rem 0;
+  /* margin: 1rem 0; */
+  margin-left: 70%;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
   opacity: 0.9;
   background: var(--light-color);
   color: #333;
+  width: 30%;
+  align-items: flex-end;
+  justify-content: flex-end;
+  border-radius: 10px;
 }
 
 .btn-primary,
@@ -163,6 +172,7 @@ img {
 .alert-primary {
   background: var(--primary-color);
   color: #fff;
+  border-radius: 10px;
 }
 
 .btn-light,
@@ -256,7 +266,7 @@ img {
   width: 100%;
   padding: 0.4rem;
   font-size: 1.2rem;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
 }
 
 .form input[type='submit'],
@@ -359,6 +369,7 @@ button {
   padding: 1rem;
   line-height: 1.8;
   margin-bottom: 1rem;
+  border-radius: 10px;
 }
 
 /* Profile Page */
@@ -465,6 +476,7 @@ button {
   grid-template-columns: 1fr 4fr;
   grid-gap: 2rem;
   align-items: center;
+  border-radius: 10px;
 }
 
 .post > div:first-child {
@@ -566,6 +578,7 @@ button {
     display: block;
     width: 100%;
     margin-bottom: 0.2rem;
+    border: '1px solid #1FA0F4' !important;
   }
 
   .post {

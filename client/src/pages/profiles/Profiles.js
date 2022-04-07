@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
 import ProfileItem from './ProfileItem';
 import { getProfiles } from '../../actions/profile';
+import { Box, Grid, Container, Typography, Stack, TextField, Button } from '@material-ui/core';
 
 const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
   useEffect(() => {
@@ -11,15 +12,15 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
   }, [getProfiles]);
 
   return (
-    <Fragment>
+    <Container maxWidth="md" sx={{ mt: 20 }}>
       {loading ? (
         <Spinner />
       ) : (
         <Fragment>
-          <h1 className='large text-primary'>Developers</h1>
+          <h1 className='large text-primary'>Users</h1>
           <p className='lead'>
             <i className='fab fa-connectdevelop' /> Browse and connect with
-            developers
+            Users
           </p>
           <div className='profiles'>
             {profiles.length > 0 ? (
@@ -32,7 +33,7 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
           </div>
         </Fragment>
       )}
-    </Fragment>
+    </Container>
   );
 };
 
